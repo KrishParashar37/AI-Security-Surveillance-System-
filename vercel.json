@@ -1,28 +1,20 @@
 {
   "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "http://your-backend-url.com/api/$1" },
+    { "source": "/(.*)", "destination": "/frontend/$1" }
+  ],
   "builds": [
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "build" }
-    },
-    {
-      "src": "backend/main.py",
-      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/main.py"
-    },
-    {
-      "src": "/snapshots/(.*)",
-      "dest": "backend/data/snapshots/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "frontend/$1",
+      "dest": "/frontend/$1",
       "check": true
     },
     {
