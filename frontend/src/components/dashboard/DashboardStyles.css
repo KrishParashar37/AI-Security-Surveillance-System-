@@ -1,0 +1,180 @@
+/* DashboardStyles.css - Updated to use CSS Variables for universal theme support */
+
+.cyber-panel {
+    background: var(--color-bg-card, #ffffff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: var(--shadow-card, 0 4px 12px rgba(0, 0, 0, 0.05));
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cyber-panel:hover {
+    border-color: var(--color-primary, #3a86ff);
+    box-shadow: var(--shadow-glow, 0 8px 24px rgba(0, 0, 0, 0.08));
+    transform: translateY(-2px);
+}
+
+.cyber-header {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-primary, #3a86ff);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 12px;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 13px;
+}
+
+.data-label {
+    color: var(--color-text-secondary, #94a3b8);
+    font-weight: 500;
+}
+
+.data-value {
+    font-weight: 700;
+    color: var(--color-text-primary, #1e293b);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.bar-bg {
+    flex: 1;
+    height: 6px;
+    background: var(--color-border, rgba(0, 0, 0, 0.05));
+    border-radius: 3px;
+    margin: 0 14px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.cyber-btn {
+    background: var(--color-primary-glow, rgba(239, 68, 68, 0.1));
+    border: 1px solid var(--color-primary, #ef4444);
+    color: var(--color-primary, #ef4444);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cyber-btn:hover {
+    background: var(--color-primary, #ef4444);
+    color: #fff;
+    transform: scale(1.02);
+}
+
+.terminal-box {
+    background: var(--color-bg-secondary, rgba(0, 0, 0, 0.6));
+    border: 1px solid var(--color-primary, rgba(34, 197, 94, 0.3));
+    padding: 14px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--color-primary, #22c55e);
+    height: 150px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.terminal-line {
+    margin-top: 6px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.clickable-header {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.clickable-header:hover {
+    color: var(--color-text-primary);
+}
+
+.drone-expanded-area {
+    margin-top: 15px;
+    border-top: 1px dashed var(--color-border);
+    padding-top: 15px;
+}
+
+.drone-btn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.drone-btn {
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-secondary);
+    padding: 10px 5px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.drone-btn:hover {
+    background: var(--color-primary-glow);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.drone-terminal {
+    height: 120px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 10px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.drone-terminal-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    margin-top: 4px;
+    animation: fadeIn 0.3s ease-in;
+    color: var(--color-text-primary);
+}
+
+.drone-terminal-time {
+    color: var(--color-text-secondary);
+    margin-right: 8px;
+}
